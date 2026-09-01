@@ -1,0 +1,11 @@
+['weather-table']
+| where tostring(alerts) != "[]"
+| extend AlertValue = tostring(alerts)
+| summarize LastTriggered = max(EventProcessedUtcTime) by AlertValue
+|  join kind = leftanti (
+   ['weather-table']
+|  where tostring(alerts) != "[]"
+|  extend AlertValue = tostring(alerts)
+|  summarize LastTriggered = max(EventProcessedUtcTime) by AlertValue
+|  where LastTriggered < ago(1m)
+  ) on AlertValue
