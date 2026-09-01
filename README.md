@@ -1,4 +1,4 @@
-# Real-Time Weather Streaming Pipeline on Azure & Microsoft Fabric
+# ☁️ Real-Time Weather Streaming Pipeline on Azure & Microsoft Fabric
 
 An end-to-end streaming data platform that ingests live weather and air-quality data from a public API, moves it through Azure's event-streaming backbone, lands it in a real-time analytical store on Microsoft Fabric, and surfaces it through a live-refreshing Power BI report — complete with automated email alerting and secure secrets management.
 
